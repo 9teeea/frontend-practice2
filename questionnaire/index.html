@@ -25,7 +25,82 @@
 
     <section id="form">
       <h2>报名表单</h2>
-      <p>（表单下一步填在这里）</p>
+      <form action="#" method="post" enctype="multipart/form-data">
+        <!-- text 姓名 -->
+        <div class="form-group">
+          <label for="name">姓名</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <!-- text 手机号 + pattern -->
+        <div class="form-group">
+          <label for="phone">手机号</label>
+          <input type="text" id="phone" name="phone" pattern="^1[3-9]\d{9}$" required>
+        </div>
+
+        <!-- email 邮箱 -->
+        <div class="form-group">
+          <label for="email">邮箱</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- number 年级 + min/max -->
+        <div class="form-group">
+          <label for="grade">年级</label>
+          <input type="number" id="grade" name="grade" min="1" max="6" required>
+        </div>
+
+        <!-- select 学院下拉 -->
+        <div class="form-group">
+          <label for="college">学院</label>
+          <select id="college" name="college" required>
+            <option value="">请选择学院</option>
+            <option value="cs">计算机科学与技术学院</option>
+            <option value="ee">电子信息工程学院</option>
+            <option value="math">数学与统计学院</option>
+            <option value="physics">物理学院</option>
+            <option value="other">其他</option>
+          </select>
+        </div>
+
+        <!-- radio 方向3选1 -->
+        <div class="form-group">
+          <label>意向方向</label>
+          <label><input type="radio" name="direction" value="ai" required> 人工智能</label>
+          <label><input type="radio" name="direction" value="web"> Web 开发</label>
+          <label><input type="radio" name="direction" value="embed"> 嵌入式开发</label>
+        </div>
+
+        <!-- checkbox 兴趣多选4个 -->
+        <div class="form-group">
+          <label>兴趣领域（可多选）</label>
+          <label><input type="checkbox" name="interest" value="algo"> 算法竞赛</label>
+          <label><input type="checkbox" name="interest" value="game"> 游戏开发</label>
+          <label><input type="checkbox" name="interest" value="data"> 数据分析</label>
+          <label><input type="checkbox" name="interest" value="iot"> 物联网</label>
+        </div>
+
+        <!-- date 活动日期 -->
+        <div class="form-group">
+          <label for="event-date">参加活动日期</label>
+          <input type="date" id="event-date" name="event-date" required>
+        </div>
+
+        <!-- file 照片上传 -->
+        <div class="form-group">
+          <label for="photo">上传个人照片</label>
+          <input type="file" id="photo" name="photo" accept="image/*">
+        </div>
+
+        <!-- textarea 自我介绍 + maxlength -->
+        <div class="form-group">
+          <label for="intro">自我介绍</label>
+          <textarea id="intro" name="intro" maxlength="200" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">提交报名</button>
+        <button type="reset">重置</button>
+      </form>
     </section>
   </main>
 
